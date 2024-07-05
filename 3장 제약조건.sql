@@ -77,4 +77,16 @@ insert into `user4` values ('A106','신사임당','F','32',null,'강릉시');
 insert into `user4` values ('A107','허난설현','F','27',null,'경기도 광주시');
 
 #실습 3-9
+create table `user5` (
+`seq` int primary key auto_increment,
+`name` varchar(10) not null,
+`gender` char(1) CHECK (`gender` in ('M','F')),
+`age` int default 1 check (`age` > 0 and `age` <100),
+`addr` varchar(20)
+);
 #실습 3-10
+insert into `user5` values (1,'김유신','M',25,'경남 김해시');
+insert into `user5` values (2,'김유신','M',25,'경남 김해시');
+insert into `user5` values (3,'김유신','M',25,'경남 김해시');
+insert into `user5` values (4,'김유신','M',25,'경남 김해시');
+insert into `user5` values (5,'김유신','M',25,'경남 김해시');
