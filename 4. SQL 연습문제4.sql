@@ -116,16 +116,20 @@ from `Bookings` B
 join `Customers` C on B.customer_id = C.customer_id
 group by `name`;
 
-#실습 4-17 44
+#실습 4-17
 select C.name,
-sum(B.num_tickets) as '전체 예매 티켓 수'
+sum(B.num_tickets) as `전체 예매 티켓 수`
 from `Bookings` B
 join `Customers` C on B.customer_id = C.customer_id
 group by `name`
-order by '전체 예매 티켓 수' desc;
+order by `전체 예매 티켓 수` desc;
 
 #실습 4-18
-select `booking_id`,`movie_id`,`name`,`booking_date`
+select 
+	`booking_id`,
+	`movie_id`,
+	`name`,
+	`booking_date`
 from `Bookings` B 
 join `Customers` C on B.customer_id = C.customer_id
 order by B.booking_date ASC
@@ -178,7 +182,7 @@ from Bookings b
 join Customers c on b.customer_id = c.customer_id
 group by `name`;
 
-#실습 4-25 //
+#실습 4-25
 select 
 c.customer_id,
 c.name,
@@ -257,4 +261,4 @@ from(
 	Group by M2.title
 	) as selectMax 
 )
-order by '예매 티켓 수' DESC;
+order by `예매 티켓 수` DESC;
